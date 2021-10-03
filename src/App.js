@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import Header from './components/header/Header';
+import TodoList from './components/todolist/TodoList';
+import TodoItemForm from './components/todoitemform/TodoItemForm';
 
 function App() {
+
+  const [todoItems, setTodoItems] = useState([]);
+
+  const handleNewTodo = (newItem) => {
+    setTodoItems(todoItems => [...todoItems, newItem]);
+  }
+
+  const handleEditTodo = (editItem) => {
+    let tempItems = [...todoItems];
+
+    const editIndex = tempItems.findIndex(element => element.id === editItem.id);
+
+    tempItems[editIndex] = editItem;
+
+    setTodoItems([...tempItems]);
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <TodoList todoList={todoItems} editListFunc={handleEditTodo} />
+      <TodoItemForm newTodo={handleNewTodo}/>
     </div>
   );
 }

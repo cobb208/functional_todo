@@ -1,0 +1,28 @@
+$background: #16cf16;
+.new_todo_form {
+    legend {
+        font-weight: bolder;
+        text-decoration: underline;
+    }
+
+    .new_todo_form_input_container {
+        label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+        input[type=text], textarea {
+            border-radius: 0.25rem;
+        }
+    }
+
+    .new_todo_form_button {
+        color: #eeeeee;
+        background-color: $background;
+        border: none;
+        border-radius: 0.75rem;
+        padding: 0.5rem 1rem;
+        font-weight: bolder;
+        margin: 0.3rem;
+    }
+}
+

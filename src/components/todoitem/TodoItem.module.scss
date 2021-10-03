@@ -1,0 +1,34 @@
+$background: #16cf16;
+
+.todoButton {
+    color: #eeeeee;
+    background-color: $background;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-weight: bolder;
+    margin: 0.3rem 0.75rem;
+}
+
+.todo_item_container {
+    background-color: white;
+    overflow: scroll;
+    text-decoration: none;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.todo_item_header {
+    h3 {
+        margin-bottom: 1rem;
+        margin-left: 0.5rem;
+    }
+    p {
+        margin-left: 0.5rem;
+    }
+}
+
+.todo_item_completed_container {
+    margin-left: 0.5rem;
+    text-decoration: underline;
+}
